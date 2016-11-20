@@ -96,7 +96,7 @@ module Kaminari
     #   #-> Displaying items 6 - 10 of 26 in total
     def page_entries_info(collection, options = {})
       entry_name = if options[:entry_name]
-                     options[:entry_name].pluralize(collection.size)
+                     options[:entry_name].pluralize(collection.size, I18n.locale)
                    else
                      collection.entry_name(:count => collection.size).downcase
                    end
